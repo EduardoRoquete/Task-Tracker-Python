@@ -21,19 +21,18 @@ class TarefaRepositorio:
 
         try:
             with open(self._caminho_arquivo, "r", encoding="utf-8") as arquivo:
-                if arquivo.read().strip() == "":
+                conteudo = arquivo.read()
+                if conteudo.strip() == "":
                     return []
 
-                arquivo.seek(0)
                 dados_tarefas = json.load(arquivo)
 
                 return [
                     Tarefa.de_dicionario(dado)
                     for dado in dados_tarefas
                 ]
-        except (json.JSONDecodeError, OSError) as erro:
-            print(f"Não foi possível carregar as tarefas: {erro}")
-            return []
+        except (json.JSONDecodeError, OSError, KeyError) as erro:
+                raise ValueError(f"Não foi possível carregar as tarefas: arquivo de dados corrompido ou incompatíveis ({erro}).")
 
     def salvar_tarefas(self, tarefas: list[Tarefa]):
         self._garantir_arquivo()

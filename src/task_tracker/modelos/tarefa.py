@@ -33,21 +33,16 @@ class Tarefa:
 
     def atualizar_descricao(self, nova_descricao:str):
 
-        if len(nova_descricao.strip()) > 0:
-            self.descricao = nova_descricao.strip()
-            self.data_atualizacao = datetime.now()
-            return f"Tarefa {self.id} atualizado com sucesso. Nova descrição: '{self.descricao}'"
-        else:
-            raise ValueError("Não foi possível atualizar tarefa. Não são aceitas tarefas vazias. Operação cancelada!")
+        self.descricao = nova_descricao
+        self.data_atualizacao = datetime.now()
 
     def atualizar_status(self, novo_status:StatusTarefa):
 
-        if isinstance(novo_status, StatusTarefa):
-            self.status = novo_status
-            self.data_atualizacao = datetime.now()
-            return f"Atualizando status da tarefa {self.id}. Tarefa {self.id}, agora está com status '{self.status.value}'"
-        else:
+        if not isinstance(novo_status, StatusTarefa):
             raise ValueError(f"Não é possível mudar o status da tarefa por meio de um texto. Operação cancelada!")
+
+        self.status = novo_status
+        self.data_atualizacao = datetime.now()
 
     def para_dicionario(self) -> dict:
 
@@ -66,5 +61,5 @@ class Tarefa:
         tarefa.status = StatusTarefa(dados["status"])
         tarefa.data_criacao = datetime.fromisoformat(dados["data_criacao"])
         tarefa.data_atualizacao = datetime.fromisoformat(dados["data_atualizacao"])
-        
+
         return tarefa

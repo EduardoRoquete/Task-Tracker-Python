@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d8e02997-2b87-4eb1-808c-d2343c34dc32" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/task-tracker.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task_tracker/__main__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task_tracker/interface/menu_terminal.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task_tracker/modelos/status_tarefa.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task_tracker/modelos/tarefa.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task_tracker/repositorio/tarefa_repositorio.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task_tracker/servico/tarefa_servico.py" afterDir="false" />
+    <list default="true" id="d8e02997-2b87-4eb1-808c-d2343c34dc32" name="Changes" comment="sprint 1 finalizada">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task_tracker/modelos/tarefa.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/task_tracker/modelos/tarefa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task_tracker/repositorio/tarefa_repositorio.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/task_tracker/repositorio/tarefa_repositorio.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +106,15 @@
       <option name="presentableId" value="Default" />
       <updated>1788440123636</updated>
     </task>
+    <task id="LOCAL-00001" summary="sprint 1 finalizada">
+      <option name="closed" value="true" />
+      <created>1788457371669</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1788457371669</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,7 +131,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -142,5 +142,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="sprint 1 finalizada" />
+    <option name="LAST_COMMIT_MESSAGE" value="sprint 1 finalizada" />
   </component>
 </project>
