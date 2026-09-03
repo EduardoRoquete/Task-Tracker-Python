@@ -3,12 +3,11 @@ from src.task_tracker.modelos.tarefa import Tarefa
 from rich import inspect
 
 from src.task_tracker.repositorio.tarefa_repositorio import TarefaRepositorio
+from src.task_tracker.servico.tarefa_servico import TarefaServico
 
 
 def main():
-    tr = TarefaRepositorio("dados/tarefas.json")
-
-    tr.carregar_tarefas_do_json()
+    pass
 
 
 if __name__ == "__main__":

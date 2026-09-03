@@ -16,22 +16,22 @@ class TarefaRepositorio:
             self._caminho_arquivo.parent.mkdir(parents=True, exist_ok=True)
             self._caminho_arquivo.write_text("[]", encoding="utf-8")
 
-    def carregar_tarefas_do_json(self):
+    def carregar_tarefas(self):
         self._garantir_arquivo()
 
         try:
             with open(self._caminho_arquivo, "r", encoding="utf-8") as arquivo:
-                conteudo = arquivo.read()
-                if conteudo.strip() == "":
+                if arquivo.read().strip() == "":
                     return []
 
+                arquivo.seek(0)
                 dados_tarefas = json.load(arquivo)
 
                 return [
                     Tarefa.de_dicionario(dado)
                     for dado in dados_tarefas
                 ]
-        except (json.JSONDecodeError, OSError, KeyError) as erro:
+        except (json.JSONDecodeError, OSError, KeyError, ValueError) as erro:
                 raise ValueError(f"Não foi possível carregar as tarefas: arquivo de dados corrompido ou incompatíveis ({erro}).")
 
     def salvar_tarefas(self, tarefas: list[Tarefa]):
@@ -44,11 +44,8 @@ class TarefaRepositorio:
         with open(self._caminho_arquivo, "w", encoding="utf-8") as arquivo:
             json.dump(dados_tarefas, arquivo, ensure_ascii=False, indent=4)
 
-        return f"Lista de tarefas salva com sucesso!"
 
-    def gerar_proximo_id(self):
-        tarefas = self.carregar_tarefas_do_json()
-
+    def gerar_proximo_id(self, tarefas:list[Tarefa]):
         if not tarefas:
             return 1
 
