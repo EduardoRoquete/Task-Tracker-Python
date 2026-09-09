@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from src.task_tracker.modelos.tarefa import Tarefa
+from modelos.tarefa import Tarefa
 
 
 class TarefaRepositorio:

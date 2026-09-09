@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from src.task_tracker.modelos.status_tarefa import StatusTarefa
+from modelos.status_tarefa import StatusTarefa
 
 
 class Tarefa:
@@ -29,7 +29,7 @@ class Tarefa:
             self.__descricao = valor_descricao.strip()
         else:
             self.__descricao = None
-            raise ValueError("Não foi possível criar uma tarefa, pois não são aceitas descrições vazias.")
+            raise ValueError("Não foi possível criar ou atualizar a tarefa, pois não são aceitas descrições vazias.")
 
     def atualizar_descricao(self, nova_descricao:str):
 

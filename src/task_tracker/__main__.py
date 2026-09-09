@@ -1,13 +1,19 @@
-from src.task_tracker.modelos.status_tarefa import StatusTarefa
-from src.task_tracker.modelos.tarefa import Tarefa
-from rich import inspect
+from interface.menu_terminal import MenuTerminal
+from modelos.status_tarefa import StatusTarefa
+from modelos.tarefa import Tarefa
 
-from src.task_tracker.repositorio.tarefa_repositorio import TarefaRepositorio
-from src.task_tracker.servico.tarefa_servico import TarefaServico
+from repositorio.tarefa_repositorio import TarefaRepositorio
+from servico.tarefa_servico import TarefaServico
 
 
 def main():
-    pass
+
+    repositorio = TarefaRepositorio("dados/tarefas.json")
+
+    servico = TarefaServico(repositorio)
+
+    menu = MenuTerminal(servico)
+    menu.iniciar()
 
 
 if __name__ == "__main__":
