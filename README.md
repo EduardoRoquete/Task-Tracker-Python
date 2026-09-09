@@ -35,19 +35,24 @@ O projeto foi desenvolvido como exercício prático de **Orientação a Objetos*
 O projeto segue uma arquitetura em camadas, cada uma com uma responsabilidade única e bem definida:
 
 ```
-task_tracker/
-├── main.py                        # Ponto de entrada da aplicação
-├── modelos/
-│   ├── tarefa.py                  # Entidade de domínio: Tarefa
-│   └── status_tarefa.py           # Enum com os status possíveis de uma tarefa
-├── repositorio/
-│   └── tarefa_repositorio.py      # Persistência dos dados (leitura/escrita em JSON)
-├── servico/
-│   └── tarefa_servico.py          # Regras de negócio e orquestração
-├── interface/
-│   └── menu_terminal.py           # Interação com o usuário via terminal
-└── dados/
-    └── tarefas.json                # Arquivo de dados (gerado em tempo de execução)
+task-tracker/
+├── src/
+│   └── task_tracker/
+│       ├── __main__.py             # Ponto de entrada da aplicação
+│       ├── modelos/
+│       │   ├── tarefa.py           # Entidade de domínio: Tarefa
+│       │   └── status_tarefa.py    # Enum com os status possíveis de uma tarefa
+│       ├── repositorio/
+│       │   └── tarefa_repositorio.py  # Persistência dos dados (leitura/escrita em JSON)
+│       ├── servico/
+│       │   └── tarefa_servico.py   # Regras de negócio e orquestração
+│       ├── interface/
+│       │   └── menu_terminal.py    # Interação com o usuário via terminal
+│       └── dados/
+│           └── tarefas.json        # Arquivo de dados (gerado em tempo de execução)
+├── .gitignore
+├── requirements.txt
+└── README.md
 ```
 
 **Princípios aplicados:**
@@ -87,8 +92,9 @@ python -m venv .venv
 # Linux/Mac:
 source .venv/bin/activate
 
-# 5. Execute a aplicação
-python main.py
+# 5. Acesse a pasta src e execute o pacote como módulo
+cd src
+python -m task_tracker
 ```
 
 > 💡 Não há dependências externas a instalar — o projeto roda apenas com a biblioteca padrão do Python (veja `requirements.txt`).
@@ -107,7 +113,7 @@ O projeto foi planejado e construído seguindo uma abordagem inspirada em **Scru
 
 O planejamento detalhado de cada sprint, com as tasks e critérios de aceitação, está disponível no board do Notion:
 
-🔗 **Notion:** https://app.notion.com/p/76e18612db3848cbb3b2bc130807c95a?v=5876eaeb0a264336b255c9332c986686&source=copy_link
+🔗 **Notion:** `https://app.notion.com/p/76e18612db3848cbb3b2bc130807c95a?v=5876eaeb0a264336b255c9332c986686&source=copy_link`
 
 ---
 
@@ -123,10 +129,11 @@ O planejamento detalhado de cada sprint, com as tasks e critérios de aceitaçã
 
 **Eduardo Aguiar Roquete**
 
-- 💼 LinkedIn: https://www.linkedin.com/in/eduardo-aguiar-roquete/
+- 💼 LinkedIn: `https://www.linkedin.com/in/eduardo-aguiar-roquete/`
 - 🐙 GitHub: [@EduardoRoquete](https://github.com/EduardoRoquete)
 
 
 ---
+
 
 <p align="center">Desenvolvido com 🐍 como projeto de estudo de Orientação a Objetos em Python</p>
